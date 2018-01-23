@@ -3,10 +3,10 @@ import nx from 'next-js-core2';
 const STATE = 'state';
 const DOT = '.';
 
-export default function (inAppBase, inContext) {
+export default function (inAppBase) {
   return class {
     onChangeToState(inPath, inValue) {
-      const data = nx.path(inContext.state, inPath);
+      const data = nx.path(this.state, inPath);
       if (inPath.indexOf(DOT) > -1) {
         nx.path(data, inPath, inValue);
         this.setState({[inPath]: data})
