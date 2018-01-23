@@ -1,6 +1,5 @@
 import nx from 'next-js-core2';
 
-const STATE = 'state';
 const DOT = '.';
 
 export default function (inAppBase) {
@@ -24,14 +23,13 @@ export default function (inAppBase) {
       this.onChangeTo('session', inPath, inValue);
     }
     onChangeTo(inType, inPath, inValue) {
-      const type = inType || STATE;
       const data = inAppBase.$[inType];
 
       if (inPath.indexOf(DOT) > -1) {
         nx.path(data, inPath, inValue);
-        inAppBase.$[type] = data;
+        inAppBase.$[inType] = data;
       } else {
-        inAppBase.$[type] = {
+        inAppBase.$[inType] = {
           [inPath]: inValue
         };
       }

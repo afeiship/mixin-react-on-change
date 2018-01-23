@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-exports.default = function (inAppBase, inContext) {
+exports.default = function (inAppBase) {
   return function () {
     function _class() {
       _classCallCheck(this, _class);
@@ -15,7 +15,7 @@ exports.default = function (inAppBase, inContext) {
     _createClass(_class, [{
       key: 'onChangeToState',
       value: function onChangeToState(inPath, inValue) {
-        var data = _nextJsCore2.default.path(inContext.state, inPath);
+        var data = _nextJsCore2.default.path(this.state, inPath);
         if (inPath.indexOf(DOT) > -1) {
           _nextJsCore2.default.path(data, inPath, inValue);
           this.setState(_defineProperty({}, inPath, data));
@@ -41,14 +41,13 @@ exports.default = function (inAppBase, inContext) {
     }, {
       key: 'onChangeTo',
       value: function onChangeTo(inType, inPath, inValue) {
-        var type = inType || STATE;
         var data = inAppBase.$[inType];
 
         if (inPath.indexOf(DOT) > -1) {
           _nextJsCore2.default.path(data, inPath, inValue);
-          inAppBase.$[type] = data;
+          inAppBase.$[inType] = data;
         } else {
-          inAppBase.$[type] = _defineProperty({}, inPath, inValue);
+          inAppBase.$[inType] = _defineProperty({}, inPath, inValue);
         }
       }
     }]);
