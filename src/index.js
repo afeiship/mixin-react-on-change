@@ -1,6 +1,10 @@
 import nx from 'next-js-core2';
 
 const DOT = '.';
+const MEMORY ='memory';
+const LOCAL ='local';
+const SESSION ='session';
+
 
 export default function (inAppBase) {
   return class {
@@ -10,17 +14,17 @@ export default function (inAppBase) {
         nx.path(data, inPath, inValue);
         this.setState({[inPath]: data})
       } else {
-        this.setState({inPath: inValue});
+        this.setState({[inPath]: inValue});
       }
     }
     onChangeToMemory(inPath, inValue) {
-      this.onChangeTo('memory', inPath, inValue);
+      this.onChangeTo(MEMORY, inPath, inValue);
     }
     onChangeToLocal(inPath, inValue) {
-      this.onChangeTo('local', inPath, inValue);
+      this.onChangeTo(LOCAL, inPath, inValue);
     }
     onChangeToSession(inPath, inValue) {
-      this.onChangeTo('session', inPath, inValue);
+      this.onChangeTo(SESSION, inPath, inValue);
     }
     onChangeTo(inType, inPath, inValue) {
       const data = inAppBase.$[inType];

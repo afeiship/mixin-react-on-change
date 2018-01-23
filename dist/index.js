@@ -20,23 +20,23 @@ exports.default = function (inAppBase) {
           _nextJsCore2.default.path(data, inPath, inValue);
           this.setState(_defineProperty({}, inPath, data));
         } else {
-          this.setState({ inPath: inValue });
+          this.setState(_defineProperty({}, inPath, inValue));
         }
       }
     }, {
       key: 'onChangeToMemory',
       value: function onChangeToMemory(inPath, inValue) {
-        this.onChangeTo('memory', inPath, inValue);
+        this.onChangeTo(MEMORY, inPath, inValue);
       }
     }, {
       key: 'onChangeToLocal',
       value: function onChangeToLocal(inPath, inValue) {
-        this.onChangeTo('local', inPath, inValue);
+        this.onChangeTo(LOCAL, inPath, inValue);
       }
     }, {
       key: 'onChangeToSession',
       value: function onChangeToSession(inPath, inValue) {
-        this.onChangeTo('session', inPath, inValue);
+        this.onChangeTo(SESSION, inPath, inValue);
       }
     }, {
       key: 'onChangeTo',
@@ -66,5 +66,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var STATE = 'state';
 var DOT = '.';
+var MEMORY = 'memory';
+var LOCAL = 'local';
+var SESSION = 'session';
