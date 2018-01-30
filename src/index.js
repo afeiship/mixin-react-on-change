@@ -12,7 +12,7 @@ export default function (inAppBase) {
       const data = nx.path(this.state, inPath);
       if (inPath.indexOf(DOT) > -1) {
         nx.path(data, inPath, inValue);
-        this.setState({[inPath]: data})
+        this.setState(data)
       } else {
         this.setState({[inPath]: inValue});
       }
