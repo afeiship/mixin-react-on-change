@@ -9,7 +9,11 @@ npm install -S afeiship/react-mixin-on-change --registry=https://registry.npm.ta
 
 ## usage:
 ```js
-export const OnChangeMixin = require('react-mixin-on-change').default( AppBase );
+// create file in: mixins/on-change.js
+
+import AppBase from 'components/scripts/index';
+export default require('react-mixin-on-change').default(AppBase);
+
 
 // <input onChange={this.onChangeToState.bind(this, 'user.nickname')}>
 // <input onChange={this.onChangeToState.bind(this, 'user.phone')}>
