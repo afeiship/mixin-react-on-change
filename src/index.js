@@ -8,13 +8,14 @@ const SESSION ='session';
 
 export default function (inAppBase) {
   return class {
-    onChangeToState(inPath, inValue) {
-      const data = nx.path(this.state, inPath);
+    onChangeToState(inPath, inEvent) {
+      const { value } = inEvent.target;
+      const data = nx.path(this.state, inPath );
       if (inPath.indexOf(DOT) > -1) {
-        nx.path(data, inPath, inValue);
+        nx.path(data, inPath, value);
         this.setState(data);
       } else {
-        this.setState({[inPath]: inValue});
+        this.setState({[inPath]: value});
       }
     }
     onChangeToMemory(inPath, inValue) {
@@ -26,15 +27,16 @@ export default function (inAppBase) {
     onChangeToSession(inPath, inValue) {
       this.onChangeTo(SESSION, inPath, inValue);
     }
-    onChangeTo(inType, inPath, inValue) {
+    onChangeTo(inType, inPath, inEvent) {
       const data = inAppBase.$[inType];
+      const { value } = inEvent.target;
 
       if (inPath.indexOf(DOT) > -1) {
-        nx.path(data, inPath, inValue);
+        nx.path(data, inPath, value);
         inAppBase.$[inType] = data;
       } else {
         inAppBase.$[inType] = {
-          [inPath]: inValue
+          [inPath]: value
         };
       }
     }

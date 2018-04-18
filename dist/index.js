@@ -14,13 +14,15 @@ exports.default = function (inAppBase) {
 
     _createClass(_class, [{
       key: 'onChangeToState',
-      value: function onChangeToState(inPath, inValue) {
+      value: function onChangeToState(inPath, inEvent) {
+        var value = inEvent.target.value;
+
         var data = _nextJsCore2.default.path(this.state, inPath);
         if (inPath.indexOf(DOT) > -1) {
-          _nextJsCore2.default.path(data, inPath, inValue);
+          _nextJsCore2.default.path(data, inPath, value);
           this.setState(data);
         } else {
-          this.setState(_defineProperty({}, inPath, inValue));
+          this.setState(_defineProperty({}, inPath, value));
         }
       }
     }, {
@@ -40,14 +42,16 @@ exports.default = function (inAppBase) {
       }
     }, {
       key: 'onChangeTo',
-      value: function onChangeTo(inType, inPath, inValue) {
+      value: function onChangeTo(inType, inPath, inEvent) {
         var data = inAppBase.$[inType];
+        var value = inEvent.target.value;
+
 
         if (inPath.indexOf(DOT) > -1) {
-          _nextJsCore2.default.path(data, inPath, inValue);
+          _nextJsCore2.default.path(data, inPath, value);
           inAppBase.$[inType] = data;
         } else {
-          inAppBase.$[inType] = _defineProperty({}, inPath, inValue);
+          inAppBase.$[inType] = _defineProperty({}, inPath, value);
         }
       }
     }]);
