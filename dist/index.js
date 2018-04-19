@@ -17,10 +17,9 @@ exports.default = function (inAppBase) {
       value: function onChangeToState(inPath, inEvent) {
         var value = inEvent.target.value;
 
-        var data = _nextJsCore2.default.path(this.state, inPath);
         if (inPath.indexOf(DOT) > -1) {
-          _nextJsCore2.default.path(data, inPath, value);
-          this.setState(data);
+          _nextJsCore2.default.path(this.state, inPath, value);
+          this.setState(this.state);
         } else {
           this.setState(_defineProperty({}, inPath, value));
         }

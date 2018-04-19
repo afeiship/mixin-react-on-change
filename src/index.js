@@ -10,10 +10,9 @@ export default function (inAppBase) {
   return class {
     onChangeToState(inPath, inEvent) {
       const { value } = inEvent.target;
-      const data = nx.path(this.state, inPath );
       if (inPath.indexOf(DOT) > -1) {
-        nx.path(data, inPath, value);
-        this.setState(data);
+        nx.path(this.state, inPath, value);
+        this.setState(this.state);
       } else {
         this.setState({[inPath]: value});
       }
