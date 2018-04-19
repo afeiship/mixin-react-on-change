@@ -7,6 +7,9 @@
 npm install -S afeiship/react-mixin-on-change --registry=https://registry.npm.taobao.org
 ```
 
+## bugs:
+- [ ] state when formData.xx_field
+
 ## usage:
 ```js
 // create file in: mixins/on-change.js
