@@ -5,27 +5,52 @@ const MEMORY ='memory';
 const LOCAL ='local';
 const SESSION ='session';
 
-
 export default function (inAppBase) {
   return class {
     onChangeToState(inPath, inEvent) {
       const { value } = inEvent.target;
       if (inPath.indexOf(DOT) > -1) {
         nx.path(this.state, inPath, value);
-        this.setState(this.state);
+        return new Promise((resolve) => {
+          this.setState(this.state, () => {
+            resolve();
+          });
+        });
       } else {
-        this.setState({[inPath]: value});
+        return new Promise((resolve) => {
+          this.setState({ [inPath]: value }, () => {
+            resolve();
+          });
+        });
       }
     }
+
+    onChangeToStates(inPath, inObject) {
+      const { value } = inEvent.target;
+      //todo: to be update
+    }
+
     onChangeToMemory(inPath, inValue) {
-      this.onChangeTo(MEMORY, inPath, inValue);
+      return this.onChangeTo(MEMORY, inPath, inValue);
     }
+
     onChangeToLocal(inPath, inValue) {
-      this.onChangeTo(LOCAL, inPath, inValue);
+      return this.onChangeTo(LOCAL, inPath, inValue);
     }
+
     onChangeToSession(inPath, inValue) {
-      this.onChangeTo(SESSION, inPath, inValue);
+      return this.onChangeTo(SESSION, inPath, inValue);
     }
+
+    onChangeToStore(inType, inObject){
+      nx.each(inObject, (key, value)=>{
+        this.onChangesTo(inType, key, value);
+      });
+      return new Promise((resolve) => {
+        resolve();
+      });
+    }
+
     onChangeTo(inType, inPath, inEvent) {
       const data = inAppBase.$[inType];
       const { value } = inEvent.target;
@@ -38,6 +63,10 @@ export default function (inAppBase) {
           [inPath]: value
         };
       }
+      return new Promise((resolve)=>{
+        resolve();
+      });
     }
+
   }
 }

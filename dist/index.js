@@ -15,29 +15,57 @@ exports.default = function (inAppBase) {
     _createClass(_class, [{
       key: 'onChangeToState',
       value: function onChangeToState(inPath, inEvent) {
+        var _this = this;
+
         var value = inEvent.target.value;
 
         if (inPath.indexOf(DOT) > -1) {
           _nextJsCore2.default.path(this.state, inPath, value);
-          this.setState(this.state);
+          return new Promise(function (resolve) {
+            _this.setState(_this.state, function () {
+              resolve();
+            });
+          });
         } else {
-          this.setState(_defineProperty({}, inPath, value));
+          return new Promise(function (resolve) {
+            _this.setState(_defineProperty({}, inPath, value), function () {
+              resolve();
+            });
+          });
         }
+      }
+    }, {
+      key: 'onChangeToStates',
+      value: function onChangeToStates(inPath, inObject) {
+        var value = inEvent.target.value;
+        //todo: to be update
       }
     }, {
       key: 'onChangeToMemory',
       value: function onChangeToMemory(inPath, inValue) {
-        this.onChangeTo(MEMORY, inPath, inValue);
+        return this.onChangeTo(MEMORY, inPath, inValue);
       }
     }, {
       key: 'onChangeToLocal',
       value: function onChangeToLocal(inPath, inValue) {
-        this.onChangeTo(LOCAL, inPath, inValue);
+        return this.onChangeTo(LOCAL, inPath, inValue);
       }
     }, {
       key: 'onChangeToSession',
       value: function onChangeToSession(inPath, inValue) {
-        this.onChangeTo(SESSION, inPath, inValue);
+        return this.onChangeTo(SESSION, inPath, inValue);
+      }
+    }, {
+      key: 'onChangeToStore',
+      value: function onChangeToStore(inType, inObject) {
+        var _this2 = this;
+
+        _nextJsCore2.default.each(inObject, function (key, value) {
+          _this2.onChangesTo(inType, key, value);
+        });
+        return new Promise(function (resolve) {
+          resolve();
+        });
       }
     }, {
       key: 'onChangeTo',
@@ -52,6 +80,9 @@ exports.default = function (inAppBase) {
         } else {
           inAppBase.$[inType] = _defineProperty({}, inPath, value);
         }
+        return new Promise(function (resolve) {
+          resolve();
+        });
       }
     }]);
 
