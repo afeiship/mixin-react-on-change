@@ -36,9 +36,15 @@ exports.default = function (inAppBase) {
       }
     }, {
       key: 'onChangeToStates',
-      value: function onChangeToStates(inPath, inObject) {
+      value: function onChangeToStates(inObject) {
+        var _this2 = this;
+
         var value = inEvent.target.value;
-        //todo: to be update
+
+        var promiseList = _nextJsCore2.default.map(inObject, function (key, value) {
+          return _this2.onChangeToState(key, value);
+        });
+        return Promise.all(promiseList);
       }
     }, {
       key: 'onChangeToMemory',
@@ -58,10 +64,10 @@ exports.default = function (inAppBase) {
     }, {
       key: 'onChangeToStore',
       value: function onChangeToStore(inType, inObject) {
-        var _this2 = this;
+        var _this3 = this;
 
         _nextJsCore2.default.each(inObject, function (key, value) {
-          _this2.onChangesTo(inType, key, value);
+          _this3.onChangesTo(inType, key, value);
         });
         return new Promise(function (resolve) {
           resolve();

@@ -25,9 +25,12 @@ export default function (inAppBase) {
       }
     }
 
-    onChangeToStates(inPath, inObject) {
+    onChangeToStates(inObject) {
       const { value } = inEvent.target;
-      //todo: to be update
+      const promiseList = nx.map( inObject ,(key, value)=>{
+        return this.onChangeToState(key,value);
+      });
+      return Promise.all(promiseList);
     }
 
     onChangeToMemory(inPath, inValue) {
