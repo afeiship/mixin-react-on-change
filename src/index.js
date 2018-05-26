@@ -1,9 +1,11 @@
 import nx from 'next-js-core2';
+import 'next-capitalize';
 
 const DOT = '.';
-const MEMORY ='memory';
-const LOCAL ='local';
-const SESSION ='session';
+const STATE = 'state';
+const MEMORY = 'memory';
+const LOCAL = 'local';
+const SESSION = 'session';
 
 export default function (inAppBase) {
   return class {
@@ -25,14 +27,6 @@ export default function (inAppBase) {
       }
     }
 
-    onChangeToStates(inObject) {
-      const { value } = inEvent.target;
-      const promiseList = nx.map( inObject ,(key, value)=>{
-        return this.onChangeToState(key,value);
-      });
-      return Promise.all(promiseList);
-    }
-
     onChangeToMemory(inPath, inValue) {
       return this.onChangeTo(MEMORY, inPath, inValue);
     }
@@ -45,13 +39,27 @@ export default function (inAppBase) {
       return this.onChangeTo(SESSION, inPath, inValue);
     }
 
-    onChangeToStore(inType, inObject){
-      nx.each(inObject, (key, value)=>{
-        this.onChangesTo(inType, key, value);
+    onChangesToState(inObject) {
+      return this.onChangesTo(STATE, inObject);
+    }
+
+    onChangesToMemory(inObject) {
+      return this.onChangesTo(MEMORY, inObject);
+    }
+
+    onChangesToLocal(inObject) {
+      return this.onChangesTo(LOCAL, inObject);
+    }
+
+    onChangesToSession(inObject) {
+      return this.onChangesTo(SESSION, inObject);
+    }
+
+    onChangesTo(inType, inObject) {
+      const promiseList = nx.map(inObject, (key, value) => {
+        return this[`onChangeTo${nx.capitalize(inType)}`](key, value);
       });
-      return new Promise((resolve) => {
-        resolve();
-      });
+      return Promise.all(promiseList);
     }
 
     onChangeTo(inType, inPath, inEvent) {
@@ -66,7 +74,7 @@ export default function (inAppBase) {
           [inPath]: value
         };
       }
-      return new Promise((resolve)=>{
+      return new Promise((resolve) => {
         resolve();
       });
     }
