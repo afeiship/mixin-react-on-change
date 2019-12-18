@@ -1,6 +1,6 @@
 {
   "name": "react-mixin-on-change",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "OnChange mixin for react.",
   "main": "dist/index.js",
   "repository": "git@github.com:afeiship/react-mixin-on-change.git",
@@ -29,5 +29,8 @@
   "dependencies": {
     "@feizheng/next-capitalize": "^1.0.0",
     "@feizheng/next-js-core2": "^2.0.5"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   }
 }

@@ -4,7 +4,7 @@
 
 ## install:
 ```bash
-npm install -S afeiship/react-mixin-on-change --registry=https://registry.npm.taobao.org
+npm install -S @feizheng/react-mixin-on-change --registry=https://registry.npm.taobao.org
 ```
 
 ## bugs:
@@ -13,9 +13,7 @@ npm install -S afeiship/react-mixin-on-change --registry=https://registry.npm.ta
 ## usage:
 ```js
 // create file in: mixins/on-change.js
-
-import AppBase from 'components/scripts/index';
-export default require('react-mixin-on-change').default(AppBase);
+export default require('@feizheng/react-mixin-on-change').default(nx.$app);
 
 
 // <input onChange={this.onChangeToState.bind(this, 'user.nickname')}>
