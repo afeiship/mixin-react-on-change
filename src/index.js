@@ -1,5 +1,5 @@
-import nx from 'next-js-core2';
-import 'next-capitalize';
+import nx from "@feizheng/next-js-core2";
+import "@feizheng/next-capitalize";
 
 const DOT = '.';
 const STATE = 'state';

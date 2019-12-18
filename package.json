@@ -27,7 +27,7 @@
     "babel-register": "^6.0.0"
   },
   "dependencies": {
-    "next-capitalize": "github:afeiship/next-capitalize",
-    "next-js-core2": "github:afeiship/next-js-core2"
+    "@feizheng/next-capitalize": "^1.0.0",
+    "@feizheng/next-js-core2": "^2.0.5"
   }
 }

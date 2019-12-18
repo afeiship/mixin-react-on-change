@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -13,7 +13,7 @@ exports.default = function (inAppBase) {
     }
 
     _createClass(_class, [{
-      key: 'onChangeToState',
+      key: "onChangeToState",
       value: function onChangeToState(inPath, inEvent) {
         var _this = this;
 
@@ -35,52 +35,52 @@ exports.default = function (inAppBase) {
         }
       }
     }, {
-      key: 'onChangeToMemory',
+      key: "onChangeToMemory",
       value: function onChangeToMemory(inPath, inValue) {
         return this.onChangeTo(MEMORY, inPath, inValue);
       }
     }, {
-      key: 'onChangeToLocal',
+      key: "onChangeToLocal",
       value: function onChangeToLocal(inPath, inValue) {
         return this.onChangeTo(LOCAL, inPath, inValue);
       }
     }, {
-      key: 'onChangeToSession',
+      key: "onChangeToSession",
       value: function onChangeToSession(inPath, inValue) {
         return this.onChangeTo(SESSION, inPath, inValue);
       }
     }, {
-      key: 'onChangesToState',
+      key: "onChangesToState",
       value: function onChangesToState(inObject) {
         return this.onChangesTo(STATE, inObject);
       }
     }, {
-      key: 'onChangesToMemory',
+      key: "onChangesToMemory",
       value: function onChangesToMemory(inObject) {
         return this.onChangesTo(MEMORY, inObject);
       }
     }, {
-      key: 'onChangesToLocal',
+      key: "onChangesToLocal",
       value: function onChangesToLocal(inObject) {
         return this.onChangesTo(LOCAL, inObject);
       }
     }, {
-      key: 'onChangesToSession',
+      key: "onChangesToSession",
       value: function onChangesToSession(inObject) {
         return this.onChangesTo(SESSION, inObject);
       }
     }, {
-      key: 'onChangesTo',
+      key: "onChangesTo",
       value: function onChangesTo(inType, inObject) {
         var _this2 = this;
 
         var promiseList = _nextJsCore2.default.map(inObject, function (key, value) {
-          return _this2['onChangeTo' + _nextJsCore2.default.capitalize(inType)](key, value);
+          return _this2["onChangeTo" + _nextJsCore2.default.capitalize(inType)](key, value);
         });
         return Promise.all(promiseList);
       }
     }, {
-      key: 'onChangeTo',
+      key: "onChangeTo",
       value: function onChangeTo(inType, inPath, inEvent) {
         var data = inAppBase.$[inType];
         var value = inEvent.target.value;
@@ -102,11 +102,11 @@ exports.default = function (inAppBase) {
   }();
 };
 
-var _nextJsCore = require('next-js-core2');
+var _nextJsCore = require("@feizheng/next-js-core2");
 
 var _nextJsCore2 = _interopRequireDefault(_nextJsCore);
 
-require('next-capitalize');
+require("@feizheng/next-capitalize");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
