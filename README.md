@@ -2,15 +2,15 @@
 > OnChange mixin for react.
 
 
-## install:
+## installation
 ```bash
 npm install -S @feizheng/react-mixin-on-change
 ```
 
-## bugs:
+## bugs
 - [ ] state when formData.xx_field
 
-## usage:
+## usage
 ```js
 // create file in: mixins/on-change.js
 export default require('@feizheng/react-mixin-on-change').default(nx.$app);
