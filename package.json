@@ -1,5 +1,5 @@
 {
-  "name": "react-mixin-on-change",
+  "name": "@feizheng/react-mixin-on-change",
   "version": "1.0.0",
   "description": "OnChange mixin for react.",
   "main": "dist/index.js",
