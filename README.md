@@ -1,7 +1,6 @@
 # react-mixin-on-change
 > OnChange mixin for react.
 
-
 ## installation
 ```bash
 npm install -S @feizheng/react-mixin-on-change
