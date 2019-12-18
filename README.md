@@ -4,7 +4,7 @@
 
 ## install:
 ```bash
-npm install -S @feizheng/react-mixin-on-change --registry=https://registry.npm.taobao.org
+npm install -S @feizheng/react-mixin-on-change
 ```
 
 ## bugs:
