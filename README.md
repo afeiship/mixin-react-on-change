@@ -1,9 +1,9 @@
-# react-mixin-on-change
+# mixin-react-on-change
 > OnChange mixin for react.
 
 ## installation
 ```bash
-npm install -S @feizheng/react-mixin-on-change
+npm install -S @jswork/mixin-react-on-change
 ```
 
 ## bugs
@@ -12,7 +12,7 @@ npm install -S @feizheng/react-mixin-on-change
 ## usage
 ```js
 // create file in: mixins/on-change.js
-export default require('@feizheng/react-mixin-on-change').default(nx.$app);
+export default require('@jswork/mixin-react-on-change').default(nx.$app);
 
 
 // <input onChange={this.onChangeToState.bind(this, 'user.nickname')}>

@@ -1,9 +1,9 @@
 {
-  "name": "@feizheng/react-mixin-on-change",
+  "name": "@jswork/mixin-react-on-change",
   "version": "1.0.0",
   "description": "OnChange mixin for react.",
   "main": "dist/index.js",
-  "repository": "git@github.com:afeiship/react-mixin-on-change.git",
+  "repository": "git@github.com:afeiship/mixin-react-on-change.git",
   "author": "feizheng <1290657123@qq.com>",
   "license": "MIT",
   "scripts": {
@@ -28,7 +28,9 @@
   },
   "dependencies": {
     "@feizheng/next-capitalize": "^1.0.0",
-    "@feizheng/next-js-core2": "^2.0.5"
+    "@feizheng/next-js-core2": "^2.0.5",
+    "@jswork/next": "^1.0.5",
+    "@jswork/next-capitalize": "^1.0.0"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
