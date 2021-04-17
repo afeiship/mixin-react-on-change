@@ -29,8 +29,6 @@
     "release-it": "^14.6.1"
   },
   "dependencies": {
-    "@feizheng/next-capitalize": "^1.0.0",
-    "@feizheng/next-js-core2": "^2.0.5",
     "@jswork/next": "^1.0.5",
     "@jswork/next-capitalize": "^1.0.0"
   },
