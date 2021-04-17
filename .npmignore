@@ -4,5 +4,6 @@ config
 static
 .babelrc
 .gitignore
+.editorconfig
+.release-it.json
 yarn.lock
-test
