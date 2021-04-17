@@ -1,30 +1,21 @@
-import nx from "@feizheng/next-js-core2";
-import "@feizheng/next-capitalize";
+import "@jswork/next-capitalize";
 
-const DOT = '.';
-const STATE = 'state';
-const MEMORY = 'memory';
-const LOCAL = 'local';
-const SESSION = 'session';
+const STATE = "state";
+const MEMORY = "memory";
+const LOCAL = "local";
+const SESSION = "session";
 
 export default function (inAppBase) {
   return class {
     onChangeToState(inPath, inEvent) {
       const { value } = inEvent.target;
-      if (inPath.indexOf(DOT) > -1) {
-        nx.path(this.state, inPath, value);
-        return new Promise((resolve) => {
-          this.setState(this.state, () => {
-            resolve();
-          });
+      const state = this.state;
+      nx.set(state, inPath, value);
+      return new Promise((resolve) => {
+        this.setState(state, () => {
+          resolve(state);
         });
-      } else {
-        return new Promise((resolve) => {
-          this.setState({ [inPath]: value }, () => {
-            resolve();
-          });
-        });
-      }
+      });
     }
 
     onChangeToMemory(inPath, inValue) {
@@ -65,19 +56,9 @@ export default function (inAppBase) {
     onChangeTo(inType, inPath, inEvent) {
       const data = inAppBase.$[inType];
       const { value } = inEvent.target;
-
-      if (inPath.indexOf(DOT) > -1) {
-        nx.path(data, inPath, value);
-        inAppBase.$[inType] = data;
-      } else {
-        inAppBase.$[inType] = {
-          [inPath]: value
-        };
-      }
-      return new Promise((resolve) => {
-        resolve();
-      });
+      nx.set(data, inPath, value);
+      inAppBase.$[inType] = data;
+      return Promise.resolve();
     }
-
-  }
+  };
 }
