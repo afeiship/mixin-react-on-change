@@ -12,7 +12,7 @@ npm install -S @jswork/mixin-react-on-change
 ## usage
 ```js
 // create file in: mixins/on-change.js
-export default require('@jswork/mixin-react-on-change').default(nx.$app);
+export default require('@jswork/mixin-react-on-change').default(nx);
 
 
 // <input onChange={this.onChangeToState.bind(this, 'user.nickname')}>

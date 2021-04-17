@@ -5,7 +5,7 @@ const MEMORY = "memory";
 const LOCAL = "local";
 const SESSION = "session";
 
-export default function (inAppBase) {
+export default function () {
   return class {
     onChangeToState(inPath, inEvent) {
       const { value } = inEvent.target;
@@ -54,11 +54,11 @@ export default function (inAppBase) {
     }
 
     onChangeTo(inType, inPath, inEvent) {
-      const data = inAppBase.$[inType];
+      const data = nx[`$${inType}`];
       const { value } = inEvent.target;
       nx.set(data, inPath, value);
-      inAppBase.$[inType] = data;
-      return Promise.resolve();
+      nx[`$${inType}`] = data;
+      return Promise.resolve(data);
     }
   };
 }
