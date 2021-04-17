@@ -1,6 +1,6 @@
 {
   "name": "@jswork/mixin-react-on-change",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "OnChange mixin for react.",
   "main": "dist/index.js",
   "repository": "git@github.com:afeiship/mixin-react-on-change.git",
