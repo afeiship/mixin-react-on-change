@@ -1,3 +1,8 @@
+interface NxWebToolkitOptions {
+  prefix?: string;
+}
 interface NxStatic {
-  WebToolkits: any;
+  WebToolkits: {
+    create: (options: any) => any;
+  }
 }
