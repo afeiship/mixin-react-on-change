@@ -1,8 +1,16 @@
 node_modules
 bower_components
 coverage
+.DS_Store
 .idea
-package-lock.json
-yarn-error.log
-yarn.lock
+.vscode
+
+# vscode localhistory
+.history
 dist
+
+# package manager
+npm-debug.log
+yarn.lock
+package-lock.json
+pnpm-lock.yaml
