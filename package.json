@@ -34,7 +34,7 @@
     "uglify-save-license": "^0.4.1"
   },
   "dependencies": {
-    "@jswork/event-mitt": "^1.0.10",
+    "@jswork/event-mitt": "^1.0.12",
     "@jswork/next-camelize": "^1.0.3",
     "@jswork/next-capitalize": "^1.0.2",
     "@jswork/next-classify": "^1.0.5",
