@@ -26,6 +26,7 @@ import '@jswork/next-qs';
 import '@jswork/next-sets';
 import '@jswork/next-json';
 import '@jswork/next-wait-until';
+import '@jswork/next-global';
 
 const defaults = { prefix: 'nak' };
 
@@ -38,6 +39,7 @@ const NxWebToolkits = nx.declare('nx.WebToolkits', {
   methods: {
     init: function (inOptions) {
       this.options = nx.mix(null, defaults, inOptions);
+      nx.global(null);
       this.initLocal();
       this.initEvent();
     },

@@ -18,6 +18,11 @@ import '@jswork/next-web-toolkits';
 //DOCS here!
 ```
 
+## typings
+```ts
+/// <reference types="@jswork/event-mitt/index.d.ts" />
+```
+
 ## license
 Code released under [the MIT license](https://github.com/afeiship/next-web-toolkits/blob/master/LICENSE.txt).
 
