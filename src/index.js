@@ -28,6 +28,7 @@ import '@jswork/next-sets';
 import '@jswork/next-json';
 import '@jswork/next-wait-until';
 import '@jswork/next-global';
+import '@jswork/next-group';
 
 const defaults = { prefix: 'nak' };
 
