@@ -32,6 +32,7 @@ import '@jswork/next-group-by';
 import '@jswork/next-min-by';
 import '@jswork/next-max-by';
 import '@jswork/next-nl2br';
+import '@jswork/next-root-dispatch';
 
 const defaults = { prefix: 'nak' };
 
