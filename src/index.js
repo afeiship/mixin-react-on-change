@@ -34,6 +34,7 @@ import '@jswork/next-max-by';
 import '@jswork/next-nl2br';
 import '@jswork/next-root-dispatch';
 import '@jswork/next-get-nil';
+import '@jswork/next-is-empty-fields';
 
 const defaults = { prefix: 'nak' };
 
