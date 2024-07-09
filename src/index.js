@@ -36,6 +36,9 @@ import '@jswork/next-root-dispatch';
 import '@jswork/next-get-nil';
 import '@jswork/next-is-empty-fields';
 
+// rc components
+import '@jswork/next-rc-components';
+
 const defaults = { prefix: 'nak' };
 
 const NxWebToolkits = nx.declare('nx.WebToolkits', {
