@@ -1,6 +1,6 @@
 {
   "name": "@jswork/next-web-toolkits",
-  "version": "1.0.22",
+  "version": "1.0.23",
   "description": "Web toolkits for web based on next.",
   "homepage": "https://js.work",
   "author": {
@@ -49,7 +49,7 @@
     "@jswork/next-global": "^1.0.3",
     "@jswork/next-group-by": "^1.1.5",
     "@jswork/next-guid": "^1.0.2",
-    "@jswork/next-is-empty-fields": "^1.0.2",
+    "@jswork/next-is-empty-fields": "^1.0.3",
     "@jswork/next-is-empty-object": "^1.0.4",
     "@jswork/next-is-plain-object": "^1.0.4",
     "@jswork/next-json": "^1.0.6",
