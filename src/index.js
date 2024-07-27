@@ -37,6 +37,7 @@ import '@jswork/next-get-nil';
 import '@jswork/next-is-empty-fields';
 import '@jswork/next-guid';
 import '@jswork/next-toggle-to';
+import '@jswork/next-defaults';
 
 // rc components
 import '@jswork/next-rc-components';
