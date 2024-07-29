@@ -38,6 +38,7 @@ import '@jswork/next-is-empty-fields';
 import '@jswork/next-guid';
 import '@jswork/next-toggle-to';
 import '@jswork/next-defaults';
+import '@jswork/next-defaults-validate';
 
 // rc components
 import '@jswork/next-rc-components';

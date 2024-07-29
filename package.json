@@ -44,6 +44,7 @@
     "@jswork/next-deep-each": "^1.0.4",
     "@jswork/next-deep-equal": "^1.0.4",
     "@jswork/next-defaults": "^1.0.1",
+    "@jswork/next-defaults-validate": "^1.0.1",
     "@jswork/next-empty": "^1.0.2",
     "@jswork/next-get-nil": "^1.0.1",
     "@jswork/next-get2get": "^1.0.8",
