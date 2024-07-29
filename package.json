@@ -1,6 +1,6 @@
 {
   "name": "@jswork/next-web-toolkits",
-  "version": "1.0.26",
+  "version": "1.0.27",
   "description": "Web toolkits for web based on next.",
   "homepage": "https://js.work",
   "author": {
@@ -44,7 +44,7 @@
     "@jswork/next-deep-each": "^1.0.4",
     "@jswork/next-deep-equal": "^1.0.4",
     "@jswork/next-defaults": "^1.0.1",
-    "@jswork/next-defaults-validate": "^1.0.1",
+    "@jswork/next-defaults-validate": "^1.0.2",
     "@jswork/next-empty": "^1.0.2",
     "@jswork/next-get-nil": "^1.0.1",
     "@jswork/next-get2get": "^1.0.8",
