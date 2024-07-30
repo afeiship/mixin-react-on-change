@@ -29,6 +29,7 @@ import '@jswork/next-json';
 import '@jswork/next-wait-until';
 import '@jswork/next-global';
 import '@jswork/next-group-by';
+import '@jswork/next-group-search';
 import '@jswork/next-min-by';
 import '@jswork/next-max-by';
 import '@jswork/next-nl2br';
