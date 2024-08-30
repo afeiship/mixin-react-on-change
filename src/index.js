@@ -44,6 +44,9 @@ import '@jswork/next-defaults-validate';
 // rc components
 import '@jswork/next-rc-components';
 
+// hacks
+import '@jswork/fix-react-warning';
+
 const defaults = { prefix: 'nak' };
 
 const NxWebToolkits = nx.declare('nx.WebToolkits', {
