@@ -41,6 +41,7 @@ import '@jswork/next-toggle-to';
 import '@jswork/next-defaults';
 import '@jswork/next-defaults-validate';
 import '@jswork/next-sample';
+import '@jswork/next-remove-keys';
 
 // rc components
 import '@jswork/next-rc-components';
