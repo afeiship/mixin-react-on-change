@@ -68,7 +68,7 @@
     "@jswork/next-qs": "^1.0.9",
     "@jswork/next-random-string": "^1.0.1",
     "@jswork/next-rc-components": "^1.0.9",
-    "@jswork/next-remove-keys": "^1.0.1",
+    "@jswork/next-remove-keys": "^1.0.2",
     "@jswork/next-root-dispatch": "^1.0.3",
     "@jswork/next-sample": "^1.0.1",
     "@jswork/next-session-storage": "^1.0.10",
